@@ -1,0 +1,17 @@
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int sum = 0;
+        int n = mat.length;
+
+        for (int i = 0; i < n; i++) {
+            // Add primary diagonal element
+            sum += mat[i][i];
+            // Add secondary diagonal element
+            if (i != n - i - 1) { // Avoid double counting the center element
+                sum += mat[i][n - i - 1];
+            }
+        }
+
+        return sum;
+    }
+}
